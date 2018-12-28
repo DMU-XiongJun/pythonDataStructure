@@ -59,7 +59,7 @@ class Arrays():
             self._items[index] = value
 
     def pop(self,index):
-        """Precondition:目标位置正确存在》"""
+        """Precondition:目标位置正确存在"""
         if index < 0 or index >= self._logicalSize:
             raise IndexError
         value = self._items[index]
