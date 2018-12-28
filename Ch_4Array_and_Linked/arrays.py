@@ -69,11 +69,26 @@ class Arrays():
         self._logicalSize -= 1
         return value
 
+    def __eq__(self, other):
+        if self.size() != other.size():
+            return False
+        for i in range(self.size()):
+            if self.__getitem__(i) != other.__getitem(i):
+                return False
+        return True
+
+def main():
+    arr = Array(5)
+    print("Array logical size is {}, Array physical size is {}".format(arr.size(), len(arr)))
+    for i in range(len(arr) + 1):
+        arr.insert(i, i)
+    print("After insert, values in arr is:", "".join(str(arr)))
+    arr.pop(2)
+    print("After pop, values in arr is:", "".join(str(arr)))
+
 
 if __name__ == '__main__':
-    a = Arrays(5, 3)
-    a.insert(2,2)
-    print(a)
+    main()
 
 
 
