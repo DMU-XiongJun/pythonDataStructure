@@ -27,13 +27,14 @@ class Arrays():
 
     def grow(self):
         """如果数组的逻辑大小等于其物理大小，将数组的物理大小调整为原来的两倍"""
-        temp = Arrays(len(self._items) + 1)
+        temp = Arrays(len(self._items) ** 2)
         temp._logicalSize = self._logicalSize
         if self._logicalSize > len(self._items):
             for i in range(self._logicalSize - 1):
                 temp[i] = self._items[i]
         else:
             for i in range(self._logicalSize):
+                print('bbbbb')
                 temp[i] = self._items[i]
         self._items = temp
 
@@ -77,13 +78,17 @@ class Arrays():
                 return False
         return True
 
+    def size(self):
+        return self._logicalSize
+
+
 def main():
     arr = Array(5)
     print("Array logical size is {}, Array physical size is {}".format(arr.size(), len(arr)))
     for i in range(len(arr) + 1):
         arr.insert(i, i)
     print("After insert, values in arr is:", "".join(str(arr)))
-    arr.pop(2)
+    arr.pop
     print("After pop, values in arr is:", "".join(str(arr)))
 
 
