@@ -1,7 +1,7 @@
 from Ch4Array_and_Linked.arrays import Arrays
 from Ch6_Inheritance_and_Abstract_Classes.abstractbag import AbstractBag
 
-class ArrayBag(AbstractBag):
+class  ArrayBag(AbstractBag):
     """An array-based bag implementation"""
     # class variable
     DEFAULT_CAPACITY = 10
